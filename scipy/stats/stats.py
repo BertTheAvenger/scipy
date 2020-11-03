@@ -1475,9 +1475,11 @@ def skewtest(a, axis=0, nan_policy='propagate', alternative='two-sided'):
     alternative : {'two-sided', 'less', 'greater'}, optional
         Defines the alternative hypothesis.
         The following options are available (default is 'two-sided'):
+
           * 'two-sided'
           * 'less': one-sided
           * 'greater': one-sided
+
         .. versionadded:: 1.6.0
 
     Returns
@@ -1577,9 +1579,11 @@ def kurtosistest(a, axis=0, nan_policy='propagate', alternative='two-sided'):
     alternative : {'two-sided', 'less', 'greater'}, optional
         Defines the alternative hypothesis.
         The following options are available (default is 'two-sided'):
+
           * 'two-sided'
           * 'less': one-sided
           * 'greater': one-sided
+
         .. versionadded:: 1.6.0
 
     Returns
@@ -7138,9 +7142,11 @@ def ranksums(x, y, alternative="two-sided"):
     alternative : {'two-sided', 'less', 'greater'}, optional
         Defines the alternative hypothesis.
         The following options are available (default is 'two-sided'):
+
           * 'two-sided'
           * 'less': one-sided
           * 'greater': one-sided
+
         .. versionadded:: 1.6.0
 
     References
