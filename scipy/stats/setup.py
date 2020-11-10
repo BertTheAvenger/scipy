@@ -28,6 +28,10 @@ def configuration(parent_package='',top_path=None):
         sources=['mvn.pyf','mvndst.f'],
     )
 
+    config.add_data_files('cy_studentized_range.pxd')
+    config.add_extension(
+        'cy_studentized_range', sources=['cy_studentized_range.cxx',
+                                      'studentized_range.cpp'])
     return config
 
 
