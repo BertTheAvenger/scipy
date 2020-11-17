@@ -7,7 +7,8 @@ class ARGS(ctypes.Structure):
                 ("k", ctypes.c_double),
                 ("v", ctypes.c_double)]
 
-lib = ctypes.CDLL('./Int_tests/studentized_range.so')
+comppath = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + 'studentizedrange/studentized_range.so'
+lib = ctypes.CDLL(comppath)
 
 lib._Z19studentized_range_piPdPv.restype = ctypes.c_double
 lib._Z19studentized_range_piPdPv.argtypes = (ctypes.c_int, ctypes.POINTER(ctypes.c_double), ctypes.c_void_p)
