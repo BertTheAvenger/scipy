@@ -188,7 +188,7 @@ from ._hypotests import epps_singleton_2samp, cramervonmises
 from itertools import permutations
 from scipy.stats.statlib import prtrng
 from scipy.optimize import root
-
+from ._studentized_range import studentized_cdf
 
 __all__ = ['find_repeats', 'gmean', 'hmean', 'mode', 'tmean', 'tvar',
            'tmin', 'tmax', 'tstd', 'tsem', 'moment', 'variation',
@@ -3861,8 +3861,7 @@ def tukeykramer(*args, sig_level=.05):
 
     def get_q(p, r, v, guess=3):
         def wrapper_cdf(q_crit, treatments, ddof, alpha):
-            return alpha - (1 - prtrng(q_crit, ddof,
-                                       treatments)[0])
+            return alpha - (1 - studentized_cdf(q_crit, treatments, ddof))
         res = root(wrapper_cdf, guess, args=(r, v, p))
         if res.success:
             return res.x.item()
