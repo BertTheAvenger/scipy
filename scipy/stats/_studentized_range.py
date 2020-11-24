@@ -19,7 +19,7 @@ lib._Z30studentized_range_p_asymptoticiPdPv.argtypes = (ctypes.c_int, ctypes.POI
 def studentized_cdf(q, k, v):
     if v > 40:
         user_data = ctypes.cast(ctypes.pointer(ARGS(q, k, v)), ctypes.c_void_p)
-        res = integrate.quad(LowLevelCallable(lib._Z30studentized_range_p_asymptoticiPdPv, user_data), 0, np.inf)[0]
+        res = integrate.quad(LowLevelCallable(lib._Z30studentized_range_p_asymptoticiPdPv, user_data), -np.inf, np.inf)[0]
         return k * res
     else:
 

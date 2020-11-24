@@ -1,5 +1,5 @@
 //Run "gcc -shared -fPIC -o studentized_range.so studentized_range.cpp" to compile
-#include <math.h>
+#include <cmath>
 
 struct RangeArg {
     double q;
